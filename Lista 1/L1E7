@@ -1,3 +1,0 @@
-lado = int(input('Informe o lado do quadrado: '))
-area = (lado*lado)
-print("O dobro da área do quadrado é: ", (area*2))
