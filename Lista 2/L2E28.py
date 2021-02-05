@@ -51,16 +51,16 @@ else:
 
 if int(tipoCarne) == 1:
         carne="File Duplo"
-    elif int(tipoCarne) == 2:
+elif int(tipoCarne) == 2:
         carne="Alcatra"
-    elif int(tipoCarne) == 3:
+elif int(tipoCarne) == 3:
         carne="Picanha"
 
 valorTotal=float(pesoCarne)*float(precoCarne)
  
 if cartao == 1:
     desconto = valorTotal*0.05
-else
+else:
     desconto = 0
 
 valorTotal-=desconto
