@@ -1,41 +1,46 @@
-#Uma fruteira está vendendo frutas com a seguinte tabela de preços:
-#                      Até 5 Kg           Acima de 5 Kg
-#Morango         R$ 2,50 por Kg          R$ 2,20 por Kg
-#Maçã            R$ 1,80 por Kg          R$ 1,50 por Kg
-#Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra ultrapassar R$ 25,00,
-# receberá ainda um desconto de 10% sobre este total. 
-# Escreva um algoritmo para ler a quantidade (em Kg) de morangos 
-# e a quantidade (em Kg) de maças adquiridas e escreva o valor a ser pago pelo cliente.
+#Exercico 27
 
-fruta1 = input("Informe o peso dos morangos: ")
-fruta2 = input("Informe o peso dos morangos: ")
+print("           |        Até 5 Kg        |   Acima de 5 Kg  ")
+print("           |                        |                  ")
+print("Morango    |     R$ 2,50 por Kg     |    R$ 2,20 por Kg")
+print("           |                        |                  ")
+print("Maçã       |     R$ 1,80 por Kg     |    R$ 1,50 por Kg")
+print("-------------------------------------------------------")
 
-precofruta1 = 0
-precofruta2 = 0
+morango = float(input("Informe quantos Kg de morango deseja: "))
 
-pesoTotal = float(fruta1)+float(fruta2)
-desconto=0
+if morango < 0:
+  print("Valor invalido")
+  quit()
 
-valorTotal=0
+elif morango <= 5:
+  valor1 = (morango * 2.5)
 
-if float(pesoTotal) > 8:
-    desconto=0.1
-
-if float(fruta1) < 5:
-    precofruta1 = 2.50
 else:
-    precofruta1 = 2.20
-    
-if float(fruta2) < 5:
-    precofruta2 = 1.80
-else:
-    precofruta2 = 1.50
-    
-valorTotal=(float(fruta1)*float(precofruta1)+float(fruta2)*float(precofruta2))
-valorTotal=valorTotal-(valorTotal*desconto)
+  valor1 = (morango * 2.2)
 
-print("---Cupom Fiscal---")
-print("Morango: Kg", fruta1)
-print("Maçã: Kg", fruta2)
-print("Descontos: ", float(desconto)*100)
-print("Valor Total: ", valorTotal)
+#----------------------
+
+maca = float(input("Informe quantos Kg de maça deseja: "))
+
+if maca < 0:
+  print("Valor invalido")
+  quit()
+
+elif maca <= 5:
+  valor2 = (maca * 1.8)
+
+else:
+  valor2 = (maca * 1.5)
+
+if (morango + maca) > 8 or (valor1 + valor2) > 25:
+  valorTot = (valor1 + valor2) * 10 / 100
+  valorTot = (valor1 + valor2) - valorTot
+  print("Valor total - R$", valorTot)
+  print("Morango: ", morango, "Kg")
+  print("Maçã: ", maca, "Kg")
+
+else:
+  print("Valor total - R$", (valor1 + valor2))
+  print("Morango: ", morango, "Kg")
+  print("Maçã: ", maca, "Kg")
