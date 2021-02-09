@@ -1,11 +1,9 @@
-#Faça um programa que calcule o valor total investido por um colecionador em sua coleção de CDs e o valor médio gasto em cada um deles.
-#O usuário deverá informar a quantidade de CDs e o valor para em cada um.
-
 i = 0
 
 qtdCd = int(input("Informe a quantidade de cd's em sua coleção:"))
 valorTotal =0.00
 media = 0.00
+vetNum = []
 
 while i < qtdCd:
     print("Cd ", (i+1))
